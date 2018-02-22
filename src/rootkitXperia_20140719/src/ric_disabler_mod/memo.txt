@@ -1,0 +1,15 @@
+android 4.4以降のXperiaで、新型のricを無効にするカーネルモジュールです。
+SO-01Eのカーネルソースでコンパイルしていますので、本来SO-01Eでしか動きませんが、
+別途copymodulecrcでパッチをあてることにより、近縁機種でも動作する模様です。
+※カーネルモジュールの導入にはroot権限が必要です
+
+使用例：
+>adb push ric_disabler_mod.ko /data/local/tmp
+>adb shell
+$ cd /data/local/tmp
+$ chmod 0644 ric_disabler_mod.ko
+$ su
+# insmod ric_disabler_mod.ko
+
+※ご利用も転載も自由ですが、別ツールに組み込む場合はソースも付けてください。
+※一応GPLライセンスにしてます。

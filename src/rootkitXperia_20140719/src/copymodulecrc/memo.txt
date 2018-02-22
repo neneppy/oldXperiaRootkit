@@ -1,0 +1,12 @@
+Xperia実機上で、カーネルモジュールのmodule_layoutのCRC値を移植するものです。
+
+使い方：
+copymodulecrc [元になるモジュールファイル名] [ターゲットのモジュールファイル名]
+
+使用例：
+>adb push copymodulecrc /data/local/tmp
+>adb push ric_disabler_mod.ko /data/local/tmp
+>adb shell
+$ cd /data/local/tmp
+$ chmod 0755 copymodulecrc
+$ ./copymodulecrc /system/lib/modules/scsi_wait_scan.ko ric_disabler_mod.ko
